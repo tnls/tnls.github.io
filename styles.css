@@ -1,0 +1,200 @@
+:root {
+  --primary: #2563eb;
+  --text: #1e293b;
+  --bg: #f8fafc;
+}
+
+body {
+    /* 确保body元素占满整个视口高度 */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.link3-container {
+    /* 确保容器宽度适应移动设备 */
+    width: 100%;
+    max-width: 420px;
+    padding: 1rem;
+    box-sizing: border-box; /* 确保padding包含在宽度内 */
+}
+
+/* 对于非常小的设备，可以添加媒体查询 */
+@media (max-width: 480px) {
+    .link3-container {
+        padding: 0.5rem;
+    }
+}
+
+.link3-profile {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.link3-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  /* content: url("https://avatars.githubusercontent.com/u/199849759?v=4"); */
+  /* content: url("./avatars.jpg"); */
+}
+
+.link3-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+}
+
+.link3-bio {
+  color: #64748b;
+  margin: 0.5rem 0 1.5rem;
+}
+
+.link3-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+.link3-button {
+    /* 保持原有基础样式 */
+    padding: 1rem 1.5rem;
+    background-color: white;
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500; /* 恢复默认字体粗细 */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: all 0.2s ease;
+    
+    /* 优化后的增强样式 */
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+/* 移除多余的.link3-icon重复定义 */
+.link3-icon {
+    width: 20px;
+    height: 20px;
+    fill: var(--primary);
+    transition: transform 0.2s ease;
+    /* 新增垂直居中样式 */
+    margin: 0;
+    flex-shrink: 0;
+}
+
+/* 更优雅的悬停动画 */
+.link3-button:hover .link3-icon {
+    transform: translateX(2px);
+}
+
+/* 移除脉冲动画 */
+/* @keyframes pulse 可以完全删除 */
+    /* box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    background-color: #e0e7ff; /* 悬停时更明显的背景色 */
+/* } */ 
+
+.link3-icon {
+    width: 24px; /* 增大图标 */
+    height: 24px;
+    fill: #2563eb; /* 图标使用主题色 */
+}
+
+.link3-footer {
+  text-align: center;
+  margin-top: 3rem;
+  color: #94a3b8;
+  font-size: 0.875rem;
+}
+
+
+/* 新增二维码区域样式 */
+.qrcode-section {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.qrcode-container {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+
+.qrcode-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.qrcode-item img {
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.qrcode-item p {
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.wechat-id {
+  background-color: var(--primary); /* 使用主题蓝色 */
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-weight: 500;
+  display: inline-block;
+  font-size: 0.8rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: all 0.2s ease;
+}
+
+/* 可选：添加悬停效果 */
+.wechat-id:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+/* 抖音图标专属样式 */
+.link3-links a[href*="douyin.com"] .link3-icon {
+    fill: #010101; /* 抖音品牌黑色 */
+    width: 22px;
+    height: 22px;
+}
+
+/* 保持其他图标默认样式 */
+.link3-icon {
+    /* 原有样式保持不变 */
+}
+
+.mobile-device .link3-container {
+    /* 移动端特定的调整 */
+    max-width: 100%;
+}
